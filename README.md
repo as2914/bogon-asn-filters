@@ -25,7 +25,7 @@ Juniper:
             /* RFC 6996 Private ASNs*/
             as-path reserved1 ".* [64512-65534] .*";
             as-path reserved2 ".* [4200000000-4294967294] .*";
-            /* RFC 6996 Last 16 and 32 bit ASNs */
+            /* RFC 7300 Last 16 and 32 bit ASNs */
             as-path last16 ".* 65535 .*";
             as-path last32 ".* 4294967295 .*";
             /* RFC IANA reserved ASNs*/
@@ -76,11 +76,11 @@ BIRD:
                           23456,                  # RFC 4893 AS_TRANS
                           64496..64511,           # RFC 5398 and documentation/example ASNs
                           64512..65534,           # RFC 6996 Private ASNs
-                          65535,                  # RFC 6996 Last 16 bit ASN
+                          65535,                  # RFC 7300 Last 16 bit ASN
                           65536..65551,           # RFC 5398 and documentation/example ASNs
                           65552..131071,          # RFC IANA reserved ASNs
                           4200000000..4294967294, # RFC 6996 Private ASNs
-                          4294967295 ];           # RFC 6996 Last 32 bit ASN
+                          4294967295 ];           # RFC 7300 Last 32 bit ASN
     
     function ebgp_import()
     int set bogon_asns;
@@ -116,7 +116,7 @@ Nokia SR OS:
             # RFC 6996 private ASNs
             entry 25 expression ".* [64512-65534] .*"
             entry 30 expression ".* [4200000000-4294967294] .*"
-            RFC 6996 last 16-bit and 32-bit ASNs
+            RFC 7300 last 16-bit and 32-bit ASNs
             entry 35 expression ".* 65535 .*"
             entry 40 expression ".* 4294967295 .*"
             # IANA reserved ASNs
